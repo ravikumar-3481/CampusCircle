@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumni Network</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS File -->
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">Campus<span style="color:green;">Circle</span></div>
+        <div class="menu-icon" id="menuIcon"><span></span><span></span><span></span></div>
+        <nav class="nav-menu" id="navMenu">
+          <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="#"><i class="fas fa-calendar-alt"></i> Events</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> Network</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Alumni Network</h1>
+      <p>Connect and interact with your fellow alumni.</p>
+    </div>
+  </section>
+
+  <!-- Filter & Sort -->
+  <div class="container controls">
+    <input type="text" id="filterInput" placeholder="Search by name, city, or branch">
+    <select id="sortSelect">
+      <option value="">Sort by</option>
+      <option value="name-asc">Name (A-Z)</option>
+      <option value="name-desc">Name (Z-A)</option>
+      <option value="year-asc">Year (Up)</option>
+      <option value="year-desc">Year (Down)</option>
+    </select>
+    <button onclick="resetFilter()">Reset</button>
+  </div>
+
+  <!-- Alumni Table -->
+  <div class="container">
+    <table id="alumniTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>City</th>
+          <th>Branch</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="alumniModal">
+    <div>
+      <span id="closeModal">&times;</span>
+      <div id="viewDetails">
+        <h2 id="modalName"></h2>
+        <p><strong>Age:</strong> <span id="modalAge"></span></p>
+        <p><strong>City:</strong> <span id="modalCity"></span></p>
+        <p><strong>Course:</strong> <span id="modalBranch"></span></p>
+        <p><strong>Graduation Year:</strong> <span id="modalYear"></span></p>
+        <p><strong>Current Job:</strong> <span id="modalJob"></span></p>
+        <p><strong>Company:</strong> <span id="modalCompany"></span></p>
+        <p><strong>Mobile:</strong> <span id="modalMobile"></span></p>
+        <p><strong>Email:</strong> <span id="modalEmail"></span></p>
+        <p><strong>LinkedIn:</strong> <span id="modalLinkedin"></span></p>
+        <div id="modalButtons">
+          <button id="editBtn">Edit</button>
+          <button id="deleteBtn">Delete</button>
+        </div>
+      </div>
+
+      <form id="editForm">
+        <input type="text" id="editName" placeholder="Name" required>
+        <input type="number" id="editAge" placeholder="Age" required>
+        <input type="text" id="editCity" placeholder="City" required>
+        <input type="text" id="editBranch" placeholder="Branch" required>
+        <input type="number" id="editYear" placeholder="Graduation Year" required>
+        <input type="text" id="editJob" placeholder="Current Job">
+        <input type="text" id="editCompany" placeholder="Company">
+        <input type="text" id="editMobile" placeholder="Mobile">
+        <input type="email" id="editEmail" placeholder="Email">
+        <input type="text" id="editLinkedin" placeholder="LinkedIn">
+        <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:10px;">
+          <button type="button" id="saveEditBtn">Save</button>
+          <button type="button" id="cancelEditBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JS File -->
+  <script src="script2.js"></script>
+</body>
+</html>
